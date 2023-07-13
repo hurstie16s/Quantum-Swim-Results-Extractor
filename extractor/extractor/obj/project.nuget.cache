@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "/Z7EAgpUdb6ogYSLtYYqL3k494YZWHNelfl31IKt7/TKe78MIXvwvQMVnOEEwrAuaZ5jY4O3Brec4xKbyzOv1w==",
+  "success": true,
+  "projectFilePath": "F:\\Git Repositories\\Quantum-Swim-Results-Extractor\\extractor\\extractor\\extractor.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\samue\\.nuget\\packages\\pdfpig\\0.1.8\\pdfpig.0.1.8.nupkg.sha512"
+  ],
+  "logs": []
+}

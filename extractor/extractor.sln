@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "extractor", "extractor\extractor.csproj", "{794BEAA7-2A0B-4201-BCD3-F2CBC06E85DF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{794BEAA7-2A0B-4201-BCD3-F2CBC06E85DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{794BEAA7-2A0B-4201-BCD3-F2CBC06E85DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{794BEAA7-2A0B-4201-BCD3-F2CBC06E85DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{794BEAA7-2A0B-4201-BCD3-F2CBC06E85DF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
