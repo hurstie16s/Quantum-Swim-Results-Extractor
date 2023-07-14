@@ -14,13 +14,35 @@ internal static class ExtractorMain
     // Check right number of arguments
     if (args.Length != 3)
     {
-      Console.Error.WriteLine("Incorrect Number of Arguments: Press Enter to Exit");
-      Console.Read();
+      Console.Error.WriteLine("Incorrect Number of Arguments");
       Environment.Exit(1);
     }
     string sourceDirectory = args[0];
+    switch (sourceDirectory.ToUpper())
+    {
+      case "PARENT":
+        if (!Directory.GetParent(sourceDirectory).Exists) break;
+        sourceDirectory = Directory.GetParent(sourceDirectory).FullName;
+        break;
+      case "THIS":
+        sourceDirectory = Directory.GetCurrentDirectory();
+        break;
+    }
+    
     string destinationDirectory = args[1];
-    if (destinationDirectory.ToUpper().Equals("THIS")) destinationDirectory = sourceDirectory;
+    switch (destinationDirectory.ToUpper())
+    {
+      case "SAME":
+        destinationDirectory = sourceDirectory;
+        break;
+      case "PARENT":
+        if (!Directory.GetParent(sourceDirectory).Exists) break;
+        destinationDirectory = Directory.GetParent(sourceDirectory).FullName;
+        break;
+      case "THIS":
+        destinationDirectory = Directory.GetCurrentDirectory();
+        break;
+    }
     string operation = args[2];
 
     List<string> files = Directory.GetFiles($"{sourceDirectory}\\").ToList();
@@ -32,8 +54,8 @@ internal static class ExtractorMain
         Merge(sortedFiles, destinationDirectory);
         break;
       default:
-        Console.Error.WriteLine("Unknown Operation: Press Enter to Exit");
-        Console.Read();
+        Console.Error.WriteLine("Unknown Operation");
+        Environment.Exit(1);
         break;
     }
   }
@@ -43,6 +65,7 @@ internal static class ExtractorMain
     byte[] resultBytes = PdfMerger.Merge(files);
     string destFilename = $"{dest}\\ResultsMerged.pdf";
     File.WriteAllBytes(destFilename, resultBytes);
+    Console.WriteLine("Documents Merged");
   }
 
   
